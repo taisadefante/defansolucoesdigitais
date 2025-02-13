@@ -13,35 +13,32 @@ const HeroSection = () => {
     >
       <Container>
         <h1 className="display-4 hero-title">
-          Bem-vindo a{" "}
+          <span style={{ color: "white" }}>Bem-vindo a </span>
           <span
             className="nowrap"
             style={{
-              color: "white",
+              color: "white", // Texto branco
+              textShadow: "2px 2px 5px #80d0ff", // Sombra azul clara
             }}
           >
             Defan Tecnologia
           </span>
         </h1>
         <p className="lead">Transformamos ideias em soluções digitais</p>
-
-        {/* Div para centralizar o botão */}
-        <div className="d-flex justify-content-center">
-          <a
-            href={`https://api.whatsapp.com/send?phone=21988359825&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.`}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none" }}
-          >
-            <Button variant="primary" size="lg">
-              <i
-                className="bi bi-whatsapp me-2"
-                style={{ fontSize: "1.5rem" }}
-              ></i>
-              Solicitar Orçamento
-            </Button>
-          </a>
-        </div>
+        <a
+          href={`https://api.whatsapp.com/send?phone=21988359825&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none" }}
+        >
+          <Button variant="primary" size="lg aline">
+            <i
+              className="bi bi-whatsapp me-2"
+              style={{ fontSize: "1.5rem" }}
+            ></i>
+            Solicitar Orçamento
+          </Button>
+        </a>
       </Container>
 
       {/* Estilos Responsivos */}
