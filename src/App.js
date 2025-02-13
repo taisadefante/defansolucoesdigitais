@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min"; // Importando o JS do Bootstrap
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import Home from "./pages/home";
-import "./styles/global.css";
+import "./styles/styles.css";
 
 function App() {
   return (

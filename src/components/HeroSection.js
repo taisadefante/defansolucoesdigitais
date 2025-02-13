@@ -24,20 +24,24 @@ const HeroSection = () => {
           </span>
         </h1>
         <p className="lead">Transformamos ideias em soluções digitais</p>
-        <a
-          href={`https://api.whatsapp.com/send?phone=21988359825&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ textDecoration: "none" }}
-        >
-          <Button variant="primary" size="lg">
-            <i
-              className="bi bi-whatsapp me-2"
-              style={{ fontSize: "1.5rem" }}
-            ></i>
-            Solicitar Orçamento
-          </Button>
-        </a>
+
+        {/* Div para centralizar o botão */}
+        <div className="d-flex justify-content-center">
+          <a
+            href={`https://api.whatsapp.com/send?phone=21988359825&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <Button variant="primary" size="lg">
+              <i
+                className="bi bi-whatsapp me-2"
+                style={{ fontSize: "1.5rem" }}
+              ></i>
+              Solicitar Orçamento
+            </Button>
+          </a>
+        </div>
       </Container>
 
       {/* Estilos Responsivos */}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Button, Row, Col, Card } from "react-bootstrap";
-import "../styles/global.css";
+import "../styles/styles.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Services from "../components/Service";
@@ -14,18 +14,17 @@ import WhatsAppButton from "../components/WhatsAppButton";
 function Home() {
   return (
     <>
+      <Header />
       <HeroSection />
-
-      <section id="portfolio" className="portfolio py-5">
-        <Header />
+      <main>
         <About />
         <Services />
         <Portfolio />
         <FAQ />
         <Contact />
-        <Footer />
         <WhatsAppButton />
-      </section>
+      </main>
+      <Footer /> {/* Footer fora da seção principal */}
     </>
   );
 }
