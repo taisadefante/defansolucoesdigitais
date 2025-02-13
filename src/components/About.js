@@ -29,7 +29,7 @@ function About() {
           >
             {/* Conteúdo do texto */}
             <div className="about-text">
-              <p className="about-title">Olá! Desenvolvedora de Software 🚀</p>
+              <p className="about-title">Olá! Sou Tais Defante. 🚀</p>
               <p className="about-description">
                 Minha trajetória profissional une gestão e tecnologia, criando
                 uma visão estratégica para o desenvolvimento de soluções
