@@ -39,17 +39,17 @@ function Portfolio() {
   const [swiperInstance, setSwiperInstance] = useState(null);
 
   return (
-    <section id="portfolio" style={{ padding: "40px 0" }}>
+    <section id="portfolio" style={{ padding: "40px 0", position: "relative" }}>
       <Container>
         <h2 className="text-center mb-4">Portfólio</h2>
 
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-center position-relative">
           <Button
             variant="outline-primary"
-            className="d-flex align-items-center mx-2 d-none d-md-flex"
+            className="btn-nav btn-prev d-flex align-items-center"
             onClick={() => swiperInstance?.slidePrev()}
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={20} />
           </Button>
 
           <div className="w-100 px-2">
@@ -59,7 +59,7 @@ function Portfolio() {
               spaceBetween={10}
               pagination={{ el: ".custom-swiper-pagination", clickable: true }}
               breakpoints={{
-                576: { slidesPerView: 1.2, spaceBetween: 15 },
+                480: { slidesPerView: 1.2, spaceBetween: 15 },
                 768: { slidesPerView: 2, spaceBetween: 20 },
                 1024: { slidesPerView: 3, spaceBetween: 30 },
               }}
@@ -68,102 +68,41 @@ function Portfolio() {
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index}>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      width: "100%",
-                      maxWidth: "100%",
-                      minHeight: "500px",
-                      background: "white",
-                      borderRadius: "8px",
-                      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-                      overflow: "hidden",
-                      padding: "15px",
-                      textAlign: "center",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "100%",
-                        height: "200px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: "#f3f3f3",
-                      }}
-                    >
-                      <img
-                        src={project.img}
-                        alt={project.title}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
+                  <div className="portfolio-card">
+                    <div className="portfolio-img-container">
+                      <img src={project.img} alt={project.title} />
                     </div>
 
-                    <div
-                      style={{
-                        flexGrow: 1,
-                        display: "flex",
-                        flexDirection: "column",
-                      }}
-                    >
+                    <div className="portfolio-content">
                       <h4
                         style={{
-                          fontSize: "18px",
-                          fontWeight: "bold",
-                          color: "#4a90e2",
+                          marginTop: "15px",
+                          fontSize: "25px",
+                          marginBottom: "20px",
                         }}
                       >
                         {project.title}
                       </h4>
-                      <p
-                        style={{
-                          fontSize: "14px",
-                          color: "#666",
-                          marginBottom: "10px",
-                          flexGrow: 1,
-                        }}
-                      >
-                        {project.description}
-                      </p>
+                      <p>{project.description}</p>
 
-                      <div
-                        style={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: "5px",
-                          justifyContent: "center",
-                        }}
-                      >
+                      <div className="tech-stacks">
                         {project.stacks.map((stack, i) => (
-                          <span
-                            key={i}
-                            style={{
-                              padding: "4px 8px",
-                              fontSize: "12px",
-                              border: "1px solid #ccc",
-                              borderRadius: "4px",
-                              color: "#333",
-                            }}
-                          >
-                            {stack}
-                          </span>
+                          <span key={i}>{stack}</span>
                         ))}
                       </div>
 
-                      <div style={{ marginTop: "auto", width: "100%" }}>
+                      <div
+                        className="portfolio-btn"
+                        style={{
+                          marginTop: "20px",
+                          fontSize: "25px",
+                          marginBottom: "20px",
+                        }}
+                      >
                         <a
                           href={project.deploy}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn btn-primary d-flex align-items-center justify-content-center mt-3 w-100"
-                          style={{ gap: "5px" }}
                         >
                           <FaLink /> Ver Projeto
                         </a>
@@ -178,13 +117,160 @@ function Portfolio() {
 
           <Button
             variant="outline-primary"
-            className="d-flex align-items-center mx-2 d-none d-md-flex"
+            className="btn-nav btn-next d-flex align-items-center"
             onClick={() => swiperInstance?.slideNext()}
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={20} />
           </Button>
         </div>
       </Container>
+
+      {/* Estilos adicionais para os cards elevados */}
+      <style>
+        {`
+          .portfolio-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            min-height: 480px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+          }
+
+          .portfolio-card:hover {
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+          }
+
+          .portfolio-img-container {
+            width: 100%;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f3f3f3;
+          }
+
+          .portfolio-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .portfolio-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .portfolio-content h4 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4a90e2;
+          }
+
+          .portfolio-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            flex-grow: 1;
+          }
+
+          .tech-stacks {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+          }
+
+          .tech-stacks span {
+            padding: 4px 8px;
+            font-size: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #333;
+          }
+
+          .portfolio-btn {
+            margin-top: auto;
+            width: 100%;
+          }
+
+          .portfolio-btn a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0d6efd;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            gap: 5px;
+          }
+
+          .portfolio-btn a:hover {
+            background: #0b5ed7;
+          }
+
+          .btn-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: white;
+            border: 2px solid #0d6efd;
+            color: #0d6efd;
+            padding: 5px 15px;
+            font-size: 14px;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .btn-nav:hover {
+            background: #0d6efd;
+            color: white;
+          }
+
+          .btn-prev {
+            left: -50px;
+          }
+
+          .btn-next {
+            right: -50px;
+          }
+
+          @media (max-width: 768px) {
+            .btn-prev {
+              left: -20px;
+            }
+
+            .btn-next {
+              right: -20px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .btn-prev {
+              left: 5px;
+            }
+
+            .btn-next {
+              right: 5px;
+            }
+          }
+        `}
+      </style>
     </section>
   );
 }
