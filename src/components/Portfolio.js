@@ -33,6 +33,42 @@ const projects = [
     stacks: ["HTML", "CSS", "JS"],
     deploy: "https://fonseca-reformas.vercel.app/",
   },
+  {
+    title: "E-Diarista",
+    description:
+      "Página moderna e responsiva para facilitar a contratação de diaristas, conectando clientes a profissionais qualificados com praticidade e segurança.",
+    img: "assets/projetos/e-diarista.png",
+    stacks: ["HTML", "CSS", "JS"],
+    repo: "",
+    deploy: "https://taisadefante.github.io/pages_diaristas/",
+  },
+  {
+    title: "Defan Tecnologia",
+    description:
+      "Página moderna e responsiva para destacar serviços, soluções inovadoras e facilitar o contato com clientes, transmitindo credibilidade e modernidade.",
+    img: "assets/projetos/defan_tecnologia.png",
+    stacks: ["HTML", "CSS", "JS"],
+    repo: "",
+    deploy: "https://taisadefante.github.io/web_empresa_ti/",
+  },
+  {
+    title: "Cartão Contato",
+    description: "",
+    img: "assets/projetos/cartão_contato.jpeg",
+    stacks: ["HTML", "CSS", "JS"],
+    repo: "",
+    deploy: "https://taisadefante.github.io/Cartao_Contato_Tais/",
+  },
+
+  {
+    title: "Cafeteria",
+    description:
+      "Página moderna e responsiva para destacar o ambiente, cardápio e serviços, proporcionando uma experiência intuitiva e facilitando o contato com clientes.",
+    img: "assets/projetos/cafeteria.jpeg",
+    stacks: ["HTML", "CSS", "JS"],
+    repo: "",
+    deploy: "https://taisadefante.github.io/cafeteria/",
+  },
 ];
 
 function Portfolio() {
