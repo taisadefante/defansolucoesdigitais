@@ -63,13 +63,16 @@ const projects = [
 ];
 
 function Portfolio() {
-  const [visibleProjects, setVisibleProjects] = useState(3); // Começa com 3 cards para telas grandes
+  const getInitialVisibleProjects = () => (window.innerWidth > 768 ? 3 : 1);
+  const [visibleProjects, setVisibleProjects] = useState(
+    getInitialVisibleProjects
+  );
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      setVisibleProjects(window.innerWidth <= 768 ? 1 : 3); // Ajusta a quantidade visível
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
     };
 
     window.addEventListener("resize", handleResize);
