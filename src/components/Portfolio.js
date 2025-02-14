@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Button } from "react-bootstrap";
 import { FaLink } from "react-icons/fa";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -63,10 +63,23 @@ const projects = [
 ];
 
 function Portfolio() {
-  const [visibleProjects, setVisibleProjects] = useState(3);
+  const [visibleProjects, setVisibleProjects] = useState(3); // Começa com 3 cards para telas grandes
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      setVisibleProjects(window.innerWidth <= 768 ? 1 : 3); // Ajusta a quantidade visível
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const loadMore = () => {
-    setVisibleProjects((prev) => prev + 3);
+    setVisibleProjects((prev) =>
+      Math.min(prev + (isMobile ? 1 : 3), projects.length)
+    );
   };
 
   return (
@@ -76,7 +89,10 @@ function Portfolio() {
 
         <div className="row">
           {projects.slice(0, visibleProjects).map((project, index) => (
-            <div key={index} className="col-md-4 mb-4 d-flex">
+            <div
+              key={index}
+              className={`mb-4 d-flex ${isMobile ? "col-12" : "col-md-4"}`}
+            >
               <div className="portfolio-card d-flex flex-column">
                 <div className="portfolio-img-container">
                   <img src={project.img} alt={project.title} />
@@ -94,6 +110,7 @@ function Portfolio() {
                       href={project.deploy}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="project-link"
                     >
                       <FaLink /> Ver Projeto
                     </a>
@@ -151,14 +168,39 @@ function Portfolio() {
           flex-direction: column;
         }
 
-         .tech-stacks span {
+        .tech-stacks span {
           padding: 4px 8px;
           font-size: 12px;
           border: 1px solid #ccc;
           border-radius: 15px 4px;
           color: #333;
           margin: 2px;
-          
+        }
+
+        .portfolio-btn a {
+          text-decoration: none;
+          color: #007bff;
+          font-weight: bold;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          transition: color 0.3s ease-in-out;
+        }
+
+        .portfolio-btn a:hover {
+          color: #0056b3;
+          text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+          .row {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .portfolio-card {
+            width: 100%;
+          }
         }
       `}</style>
     </section>
