@@ -24,7 +24,14 @@ const HeroSection = () => {
             Defan Soluções Digitais
           </span>
         </h2>
-        <p className="lead">Transformamos ideias em soluções digitais</p>
+        <p
+          className="lead"
+          style={{
+            fontSize: "25px",
+          }}
+        >
+          Transformamos ideias em soluções digitais
+        </p>
         <a
           href={`https://api.whatsapp.com/send?phone=21988359825&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.`}
           target="_blank"
