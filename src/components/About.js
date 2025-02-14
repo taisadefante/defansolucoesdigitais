@@ -71,6 +71,7 @@ function About() {
           .about-text {
             text-align: center !important;
             padding: 0 40px; /* Espaçamento lateral padrão */
+            margin-left: 40px;
           }
 
           /* Em telas menores, a imagem vai para cima, o texto tem menos margem e a fonte reduz */
@@ -84,6 +85,7 @@ function About() {
 
             .about-text {
               padding: 0 15px !important; /* Reduz margem lateral */
+              margin: 5px;
             }
 
             .about-title {

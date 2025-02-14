@@ -44,16 +44,6 @@ p {
   color: blac;
 }
 
-/* src/styles/home.css*/
-.hero {
-  background: url("https://via.placeholder.com/1920x600") no-repeat center
-    center/cover;
-  padding: 100px 0;
-}
-.portfolio {
-  background: #f8f9fa;
-}
-
 /* src/styles/hero.css */
 .hero {
   background: url("https://via.placeholder.com/1920x600") no-repeat center
@@ -63,16 +53,6 @@ p {
   align-items: center;
   justify-content: center;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
 }
 
 /*About*/
