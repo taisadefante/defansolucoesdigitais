@@ -33,15 +33,15 @@ function About() {
               <p className="about-description">
                 Minha trajetória profissional une gestão e tecnologia, criando
                 uma visão estratégica para o desenvolvimento de soluções
-                inovadoras. Sou formada em <b>Administração de Empresas</b> e
-                <b> Gestão da Tecnologia da Informação</b>, com pós-graduação em
-                <b> Gestão de Projetos, Finanças, Auditoria e Controladoria</b>.
+                inovadoras. Sou formada em Administração de Empresas e Gestão da
+                Tecnologia da Informação, com pós-graduação em Gestão de
+                Projetos, Finanças, Auditoria e Controladoria.
               </p>
+
               <p className="about-description">
                 Apaixonada por tecnologia e inovação, expandi minha atuação para
-                o desenvolvimento de software, unindo{" "}
-                <b>lógica, criatividade e resolução de problemas</b> para
-                construir aplicações eficientes e impactantes.
+                o desenvolvimento de software, lógica, criatividade e resolução
+                de problemas para construir aplicações eficientes e impactantes.
               </p>
             </div>
           </div>
@@ -93,9 +93,12 @@ function About() {
             }
 
             .about-description {
-              font-size: 16px; /* Reduz o tamanho do texto para melhor adaptação */
-              line-height: 1.6; /* Ajusta espaçamento entre linhas */
-            }
+            width: 100%; 
+            font-size: 16px; /* Mantém uma boa legibilidade */
+            line-height: 1.6; /* Ajusta o espaçamento entre linhas */
+            
+    
+  }
           }
 
           /* Ajuste do título e do texto */
