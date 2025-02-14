@@ -59,22 +59,6 @@ p {
 section .about {
 }
 
-/*Footer*/
-
-footer {
-  background-color: black;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
-  width: 100%;
-  margin-top: 10px;
-}
-
-footer p {
-  margin: 1px 0; /* Diminui a margem entre os parágrafos */
-  font-size: 12px;
-}
-
 /* Whatsapp button*/
 .whatsapp-button {
   position: fixed;
