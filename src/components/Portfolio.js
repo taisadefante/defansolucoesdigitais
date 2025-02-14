@@ -51,14 +51,6 @@ const projects = [
     repo: "",
     deploy: "https://taisadefante.github.io/web_empresa_ti/",
   },
-  {
-    title: "Cartão Contato",
-    description: "",
-    img: "assets/projetos/cartão_contato.jpeg",
-    stacks: ["HTML", "CSS", "JS"],
-    repo: "",
-    deploy: "https://taisadefante.github.io/Cartao_Contato_Tais/",
-  },
 
   {
     title: "Cafeteria",
@@ -68,6 +60,15 @@ const projects = [
     stacks: ["HTML", "CSS", "JS"],
     repo: "",
     deploy: "https://taisadefante.github.io/cafeteria/",
+  },
+  {
+    title: "Cartão Contato",
+    description:
+      "Um cartão digital é uma versão eletrônica de um cartão de visita tradicional, mas com mais funcionalidades e interatividade. Ele pode ser acessado online e compartilhado facilmente por meio de links, QR codes ou redes sociais.",
+    img: "assets/projetos/cartão_contato.jpeg",
+    stacks: ["HTML", "CSS", "JS"],
+    repo: "",
+    deploy: "https://taisadefante.github.io/Cartao_Contato_Tais/",
   },
 ];
 
