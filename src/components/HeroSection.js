@@ -27,7 +27,7 @@ const HeroSection = () => {
         <p
           className="lead"
           style={{
-            fontSize: "25px",
+            fontSize: "22px",
           }}
         >
           Transformamos ideias em soluções digitais
