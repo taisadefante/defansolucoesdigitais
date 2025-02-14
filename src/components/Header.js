@@ -32,7 +32,7 @@ const Header = () => {
           {/* Ícones das redes sociais */}
           <div className="d-flex align-items-center">
             <a
-              href="https://www.linkedin.com/seu-perfil"
+              href="https://www.linkedin.com/in/taisadefante/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-hover mx-2"
@@ -40,7 +40,7 @@ const Header = () => {
               <FaLinkedin />
             </a>
             <a
-              href="https://www.instagram.com/seu-perfil"
+              href="https://www.instagram.com/defan_tecnologia/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-hover mx-2"
@@ -48,7 +48,7 @@ const Header = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://www.facebook.com/seu-perfil"
+              href="https://www.facebook.com/profile.php?id=61572546557616"
               target="_blank"
               rel="noopener noreferrer"
               className="social-hover mx-2"

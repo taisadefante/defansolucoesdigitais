@@ -12,7 +12,7 @@ const HeroSection = () => {
       }}
     >
       <Container>
-        <h1 className="display-4 hero-title">
+        <h2 className="display-4  hero-title">
           <span style={{ color: "white" }}>Bem-vindo a </span>
           <span
             className="nowrap"
@@ -21,9 +21,9 @@ const HeroSection = () => {
               textShadow: "2px 2px 5px #80d0ff", // Sombra azul clara
             }}
           >
-            Defan Tecnologia
+            Defan Soluções Digitais
           </span>
-        </h1>
+        </h2>
         <p className="lead">Transformamos ideias em soluções digitais</p>
         <a
           href={`https://api.whatsapp.com/send?phone=21988359825&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento.`}
