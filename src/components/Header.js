@@ -20,7 +20,7 @@ const Header = () => {
               Serviços
             </Nav.Link>
             <Nav.Link href="#portfolio" className="nav-hover">
-              Portfólio
+              Projetos
             </Nav.Link>
             <Nav.Link href="#faq" className="nav-hover">
               FAQ

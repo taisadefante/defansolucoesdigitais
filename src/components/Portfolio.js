@@ -78,11 +78,12 @@ function Portfolio() {
   return (
     <section id="portfolio" style={{ padding: "40px 0", position: "relative" }}>
       <Container>
-        <h2 className="text-center mb-4">Portfólio</h2>
+        <h2 className="text-center mb-4">Projetos</h2>
 
         <div className="d-flex align-items-center justify-content-center position-relative">
           <Button
             variant="outline-primary"
+            a
             className="btn-nav btn-prev d-flex align-items-center"
             onClick={() => swiperInstance?.slidePrev()}
           >

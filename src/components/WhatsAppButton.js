@@ -1,7 +1,7 @@
 function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/21988359825"
+      href="https://wa.me/+5521988359825"
       className="whatsapp-button"
       target="_blank"
       rel="noopener noreferrer"

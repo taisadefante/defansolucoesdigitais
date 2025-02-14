@@ -17,7 +17,7 @@ function About() {
 
           {/* Texto */}
           <div
-            className="col-md-10 text-center text-md-start position-relative p-5"
+            className="col-md-10 text-center position-relative p-5"
             style={{
               background: "rgb(70, 70, 153)",
               borderRadius: "10px",
@@ -67,16 +67,14 @@ function About() {
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
           }
 
-          /* Ajuste do TEXTO em telas grandes */
-          @media (min-width: 992px) {
-            .about-text {
-              margin-left: 110px; /* Apenas o texto é movido para a esquerda */
-              text-align: left;
-            }
+          /* Texto sempre centralizado */
+          .about-text {
+            text-align: center !important;
+            padding: 0 40px; /* Espaçamento lateral padrão */
           }
 
-          /* Em telas menores, a imagem vai para cima e o texto centraliza */
-          @media (max-width: 992px) {
+          /* Em telas menores, a imagem vai para cima, o texto tem menos margem e a fonte reduz */
+          @media (max-width: 768px) {
             .about-image-container {
               position: static;
               display: flex;
@@ -85,13 +83,20 @@ function About() {
             }
 
             .about-text {
-              margin-left: 0 !important; /* Remove margem extra em telas pequenas */
-              text-align: justify;
-              padding: 0 20px; /* Adiciona espaçamento lateral */
+              padding: 0 15px !important; /* Reduz margem lateral */
+            }
+
+            .about-title {
+              font-size: 20px; /* Reduz um pouco o tamanho do título */
+            }
+
+            .about-description {
+              font-size: 16px; /* Reduz o tamanho do texto para melhor adaptação */
+              line-height: 1.6; /* Ajusta espaçamento entre linhas */
             }
           }
 
-          /* Ajuste do texto */
+          /* Ajuste do título e do texto */
           .about-title {
             font-size: 22px;
             font-weight: bold;
@@ -102,7 +107,6 @@ function About() {
           .about-description {
             font-size: 18px;
             line-height: 1.8;
-            text-indent: 0px;
             margin-bottom: 15px;
           }
         `}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 
 const services = [
   {
@@ -49,9 +48,17 @@ const services = [
 const Services = () => {
   const [index, setIndex] = useState(0);
   const [itemsPerSlide, setItemsPerSlide] = useState(3);
+  const [groupedServices, setGroupedServices] = useState([]);
+  const [autoScroll, setAutoScroll] = useState(true);
 
   const updateItemsPerSlide = () => {
-    setItemsPerSlide(window.innerWidth < 768 ? 1 : 3);
+    if (window.innerWidth < 576) {
+      setItemsPerSlide(1); // Mobile
+    } else if (window.innerWidth < 768) {
+      setItemsPerSlide(2); // Tablet
+    } else {
+      setItemsPerSlide(3); // Desktop
+    }
   };
 
   useEffect(() => {
@@ -60,80 +67,71 @@ const Services = () => {
     return () => window.removeEventListener("resize", updateItemsPerSlide);
   }, []);
 
-  const groupedServices = [];
-  for (let i = 0; i < services.length; i += itemsPerSlide) {
-    groupedServices.push(services.slice(i, i + itemsPerSlide));
-  }
-
   useEffect(() => {
-    if (groupedServices.length > 0 && index >= groupedServices.length) {
-      setIndex(0);
+    const newGroupedServices = [];
+    for (let i = 0; i < services.length; i += itemsPerSlide) {
+      newGroupedServices.push(services.slice(i, i + itemsPerSlide));
     }
-  }, [groupedServices, index]);
+    setGroupedServices(newGroupedServices);
+    setIndex(0); // Resetar índice ao mudar o agrupamento
+  }, [itemsPerSlide]);
 
+  // Função para avançar os slides
   const nextSlide = () => {
     setIndex((prevIndex) => (prevIndex + 1) % groupedServices.length);
+    setAutoScroll(false); // Pausar rolagem automática ao clicar
+    setTimeout(() => setAutoScroll(true), 10000); // Retomar após 10s
   };
 
-  const prevSlide = () => {
-    setIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + groupedServices.length) % groupedServices.length
-    );
-  };
+  // Rolagem automática a cada 5 segundos
+  useEffect(() => {
+    if (autoScroll) {
+      const interval = setInterval(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % groupedServices.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [autoScroll, groupedServices.length]);
 
   return (
     <section id="services" className="py-5">
       <Container>
         <h2 className="text-center mb-4">Nossos Serviços</h2>
 
-        <Row className="align-items-center justify-content-center">
-          <Col xs="auto">
-            <Button
-              variant="outline-primary"
-              onClick={prevSlide}
-              className="d-flex align-items-center"
-              disabled={groupedServices.length === 0}
+        <Row className="justify-content-center">
+          {(groupedServices[index] || []).map((service, idx) => (
+            <Col
+              key={idx}
+              xs={12}
+              sm={6}
+              md={4}
+              className="d-flex align-items-stretch mb-4"
             >
-              <ChevronLeft size={24} />
-            </Button>
-          </Col>
-
-          <Col>
-            <Row className="justify-content-center">
-              {(groupedServices[index] || []).map((service, idx) => (
-                <Col md={4} key={idx} className="d-flex align-items-stretch">
-                  <Card
-                    className="shadow-lg border-0 text-center w-100"
-                    style={{ boxShadow: "0px 4px 10px #4a90e2" }}
+              <Card
+                className="shadow-lg border-0 text-center w-100"
+                style={{ boxShadow: "0px 4px 10px #4a90e2" }}
+              >
+                <Card.Body>
+                  <Card.Title
+                    as="h4"
+                    className="fw-bold"
+                    style={{ color: "#4a90e2" }}
                   >
-                    <Card.Body>
-                      <Card.Title
-                        as="h4"
-                        className="fw-bold"
-                        style={{ color: "#4a90e2" }}
-                      >
-                        {service.title}
-                      </Card.Title>
-                      <Card.Text>{service.description}</Card.Text>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </Col>
-
-          <Col xs="auto">
-            <Button
-              variant="outline-primary"
-              onClick={nextSlide}
-              className="d-flex align-items-center"
-              disabled={groupedServices.length === 0}
-            >
-              <ChevronRight size={24} />
-            </Button>
-          </Col>
+                    {service.title}
+                  </Card.Title>
+                  <Card.Text>{service.description}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
         </Row>
+
+        {/* Botão "Próximo" centralizado abaixo dos cartões */}
+        <div className="text-center mt-3">
+          <Button variant="primary" onClick={nextSlide}>
+            Próximo
+          </Button>
+        </div>
       </Container>
     </section>
   );
