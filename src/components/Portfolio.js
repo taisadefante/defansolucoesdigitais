@@ -101,7 +101,7 @@ function Portfolio() {
                   <img src={project.img} alt={project.title} />
                 </div>
                 <div className="portfolio-content flex-grow-1 d-flex flex-column">
-                  <h4>{project.title}</h4>
+                  <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <div className="tech-stacks mb-3">
                     {project.stacks.map((stack, i) => (
