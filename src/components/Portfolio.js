@@ -144,7 +144,7 @@ function Portfolio() {
           height: 100%;
           background: white;
           border-radius: 8px;
-          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 15px rgba(0, 0, 0, 1.5);
           padding: 15px;
           text-align: center;
           transition: all 0.3s ease-in-out;
