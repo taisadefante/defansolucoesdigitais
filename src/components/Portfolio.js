@@ -13,6 +13,14 @@ const projects = [
     deploy: "https://jumartins-terapeuta.vercel.app/",
   },
   {
+    title: "Inter Film",
+    description:
+      "Empresa especializada em películas de controle solar (insulfilm) para automóveis e residências..",
+    img: "assets/projetos/interFilm.jpeg",
+    stacks: ["HTML", "CSS", "JS"],
+    deploy: "https://interfilm.vercel.app/",
+  },
+  {
     title: "Velas Alecrim",
     description:
       "E-commerce moderno e responsivo, onde clientes podem navegar, adicionar itens ao carrinho e finalizar a compra com envio direto do pedido para o WhatsApp.",
