@@ -17,7 +17,7 @@ const projects = [
     description:
       "Empresa especializada em películas de controle solar (insulfilm) para automóveis e residências..",
     img: "assets/projetos/interFilm.png",
-    stacks: ["HTML", "CSS", "JS"],
+    stacks: ["Next", "Bootstrap"],
     deploy: "https://interfilm.vercel.app/",
   },
   {
