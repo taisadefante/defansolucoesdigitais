@@ -52,14 +52,7 @@ const projects = [
     stacks: ["HTML", "CSS", "JS"],
     deploy: "https://taisadefante.github.io/pages_diaristas/",
   },
-  {
-    title: "Defan Tecnologia",
-    description:
-      "Página moderna e responsiva para destacar serviços, soluções inovadoras e facilitar o contato com clientes, transmitindo credibilidade e modernidade.",
-    img: "assets/projetos/defan_tecnologia.png",
-    stacks: ["HTML", "CSS", "JS"],
-    deploy: "https://taisadefante.github.io/web_empresa_ti/",
-  },
+ 
   {
     title: "Cafeteria",
     description:
