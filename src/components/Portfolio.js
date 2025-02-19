@@ -37,6 +37,13 @@ const projects = [
     deploy: "https://advogados-delta.vercel.app/",
   },
   {
+    title: "Cartão Digital",
+    description: "artão digital moderno, dinâmico e totalmente personalizado. ",
+    img: "assets/projetos/cartao_digital.png",
+    stacks: ["HTML", "CSS", "JS"],
+    deploy: "https://cartaodefansolucoesdigitais.vercel.app/",
+  },
+  {
     title: "Fonseca Reformas",
     description:
       "Página profissional para uma empresa de engenharia civil, destacando serviços, portfólio e facilitando o contato.",
@@ -52,7 +59,7 @@ const projects = [
     stacks: ["HTML", "CSS", "JS"],
     deploy: "https://taisadefante.github.io/pages_diaristas/",
   },
- 
+
   {
     title: "Cafeteria",
     description:
