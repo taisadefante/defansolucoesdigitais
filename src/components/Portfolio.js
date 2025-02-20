@@ -31,17 +31,26 @@ const projects = [
   {
     title: "Pagina Advogados",
     description:
-      "Site profissional para advogados, moderno, responsivo e intuitivo. Destaque seus serviços e fortaleça sua presença online!",
+      "Modelo de site profissional para advogados, moderno, responsivo e intuitivo. Destaque seus serviços e fortaleça sua presença online!",
     img: "assets/projetos/advogados.png",
     stacks: ["Vite", "React", "tailwind"],
     deploy: "https://advogados-delta.vercel.app/",
   },
   {
     title: "Cartão Digital",
-    description: "artão digital moderno, dinâmico e totalmente personalizado. ",
+    description:
+      "Cartão digital moderno, dinâmico e totalmente personalizado. ",
     img: "assets/projetos/cartao_digital.png",
     stacks: ["HTML", "CSS", "JS"],
     deploy: "https://cartaodefansolucoesdigitais.vercel.app/",
+  },
+  {
+    title: "Pagina Psicologo",
+    description:
+      "Modelo de site profissional para Psicologos, moderno, responsivo e intuitivo. ",
+    img: "assets/projetos/psicologo.png",
+    stacks: ["HTML", "CSS", "JS"],
+    deploy: "https://psicologo-seven.vercel.app/",
   },
   {
     title: "Fonseca Reformas",
