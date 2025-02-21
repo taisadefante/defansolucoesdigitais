@@ -3,7 +3,9 @@ import React from "react";
 function AboutEnterprise() {
   return (
     <section id="about" className="about py-5 text-dark position-relative">
-      <div className="container mt-5">
+      <div className="container-fluid mt-5">
+        {" "}
+        {/* Alterado para container-fluid */}
         <div className="row justify-content-center position-relative">
           {/* Imagem - Ajusta conforme a tela */}
           <div className="about-image-container">
@@ -14,9 +16,9 @@ function AboutEnterprise() {
             />
           </div>
 
-          {/* Texto */}
+          {/* Texto - Agora 100% da largura em telas menores */}
           <div
-            className="col-md-10 text-center position-relative p-5"
+            className="col-md-10 col-12 w-100 text-center position-relative p-5"
             style={{
               background: "rgb(112, 112, 114)",
               borderRadius: "10px",
@@ -37,7 +39,7 @@ function AboutEnterprise() {
               </p>
 
               <p className="text-custom mb-3">
-                trabalhamos em cada projeto com atenção aos detalhes, garantindo
+                Trabalhamos em cada projeto com atenção aos detalhes, garantindo
                 que cada site seja não apenas visualmente atraente, mas também
                 intuitivo, responsivo e otimizado para o melhor desempenho
                 possível. Seja para um site institucional, um e-commerce ou uma
@@ -45,7 +47,7 @@ function AboutEnterprise() {
                 necessidades.
               </p>
               <p className="text-custom mb-3">
-                estamos comprometidos em oferecer soluções que realmente atendem
+                Estamos comprometidos em oferecer soluções que realmente atendem
                 às necessidades dos nossos clientes, resolvendo os desafios
                 digitais de forma eficiente e eficaz. Seja qual for o problema
                 que você está enfrentando no mundo online, nós temos a
@@ -75,14 +77,16 @@ function AboutEnterprise() {
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
           }
 
-          /* Texto sempre centralizado */
+          /* Texto ocupa 100% da largura */
           .about-text {
-            text-align: center !important;
-            padding: 0 40px; /* Espaçamento lateral padrão */
-            margin-left: 40px;
+            text-align: left !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0;
+            margin: 0;
           }
 
-          /* Em telas menores, a imagem vai para cima, o texto tem menos margem e a fonte reduz */
+          /* Em telas menores, remove margens e garante largura total */
           @media (max-width: 768px) {
             .about-image-container {
               position: static;
@@ -92,21 +96,20 @@ function AboutEnterprise() {
             }
 
             .about-text {
-              padding: 0 1px !important; /* Reduz margem lateral */
-              margin: 1px;
+              width: 100% !important;
+              padding: 0 5px !important; /* Ajuste mínimo para evitar cortes */
+              margin: 0 !important; /* Remove margem lateral */
+              text-align: left; /* Melhor leitura */
             }
 
             .about-title {
-              font-size: 20px; /* Reduz um pouco o tamanho do título */
+              font-size: 20px;
             }
 
             .about-description {
-            width: 100%; 
-            font-size: 16px; /* Mantém uma boa legibilidade */
-            line-height: 1.6; /* Ajusta o espaçamento entre linhas */
-            
-    
-  }
+              font-size: 16px;
+              line-height: 1.6;
+            }
           }
 
           /* Ajuste do título e do texto */
