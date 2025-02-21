@@ -5,6 +5,7 @@ import Footer from "./components/Footer"; // Importando o Footer
 import Portfolio from "./pages/Portfolio";
 import Home from "./pages/home"; // Certifique-se de importar a Home
 import Contact from "./components/Contact";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
         </Routes>
         <Contact />
       </main>
+      <WhatsAppButton />
+
       <Footer />
 
       {/* Estilos para corrigir a sobreposição do Header */}
