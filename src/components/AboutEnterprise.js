@@ -28,7 +28,7 @@ function AboutEnterprise() {
           >
             {/* Conteúdo do texto */}
             <div className="about-text">
-              <p className="about-description">
+              <p className="text-custom mb-3">
                 Somos apaixonados por transformar ideias em experiências
                 digitais únicas. Especializados na criação de sites e no
                 desenvolvimento web, nosso objetivo é entregar soluções
@@ -36,7 +36,7 @@ function AboutEnterprise() {
                 e indivíduos que buscam se destacar no mundo online.
               </p>
 
-              <p className="about-description">
+              <p className="text-custom mb-3">
                 trabalhamos em cada projeto com atenção aos detalhes, garantindo
                 que cada site seja não apenas visualmente atraente, mas também
                 intuitivo, responsivo e otimizado para o melhor desempenho
@@ -44,7 +44,7 @@ function AboutEnterprise() {
                 plataforma personalizada, estamos prontos para atender às suas
                 necessidades.
               </p>
-              <p className="about-description">
+              <p className="text-custom mb-3">
                 estamos comprometidos em oferecer soluções que realmente atendem
                 às necessidades dos nossos clientes, resolvendo os desafios
                 digitais de forma eficiente e eficaz. Seja qual for o problema
