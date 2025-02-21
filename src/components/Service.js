@@ -133,8 +133,11 @@ const Services = () => {
               className="d-flex align-items-stretch mb-4"
             >
               <Card
-                className="shadow-lg border-0 text-center w-100"
-                style={{ boxShadow: "0px 4px 10px #4a90e2" }}
+                className="shadow-lg border-4 text-center w-100"
+                style={{
+                  boxShadow: "0px 4px 10px #4a90e2",
+                  borderRadius: "5px 80px",
+                }}
               >
                 <Card.Body>
                   <Card.Title
@@ -170,7 +173,7 @@ const Services = () => {
           color: #333 !important; /* Texto preto */
           border: 1px solid #b0b0b0 !important;
           padding: 10px 20px;
-          border-radius: 5px;
+          border-radius: 5px 10px;
           transition: background-color 0.3s ease-in-out;
           font-weight: bold;
         }
