@@ -8,7 +8,7 @@ const projects = [
     title: "Juliana Martins - Terapeuta",
     description:
       "Página profissional e responsiva para um terapeuta, destacando seus serviços, especialização e facilitando o contato com pacientes.",
-    img: "assets/projetos/julianamartins_terapeuta.png",
+    img: "assets/projetos/ju_martins.jpeg",
     stacks: ["React.js", "Bootstrap"],
     deploy: "https://jumartins-terapeuta.vercel.app/",
   },
@@ -16,7 +16,7 @@ const projects = [
     title: "Inter Film",
     description:
       "Empresa especializada em películas de controle solar (insulfilm) para automóveis e residências.",
-    img: "assets/projetos/inter_film.png",
+    img: "assets/projetos/INTER_FILM.jpeg",
     stacks: ["Next", "Bootstrap"],
     deploy: "https://interfilm.vercel.app/",
   },
@@ -24,7 +24,7 @@ const projects = [
     title: "Velas Alecrim",
     description:
       "E-commerce moderno e responsivo, onde clientes podem navegar, adicionar itens ao carrinho e finalizar a compra com envio direto do pedido para o WhatsApp.",
-    img: "assets/projetos/velas-alecrim.png",
+    img: "assets/projetos/velas_alecrim.jpeg",
     stacks: ["HTML", "CSS", "JS"],
     deploy: "https://velas-alecrim.vercel.app/",
   },
@@ -32,7 +32,7 @@ const projects = [
     title: "Pagina Advogados",
     description:
       "Modelo de site profissional para advogados, moderno, responsivo e intuitivo. Destaque seus serviços e fortaleça sua presença online!",
-    img: "assets/projetos/advogados.png",
+    img: "assets/projetos/advogado.png",
     stacks: ["Vite", "React", "Tailwind"],
     deploy: "https://advogados-delta.vercel.app/",
   },
@@ -58,6 +58,13 @@ const projects = [
     img: "assets/projetos/fonseca_reformas.jpeg",
     stacks: ["HTML", "CSS", "JS"],
     deploy: "https://fonseca-reformas.vercel.app/",
+  },
+  {
+    title: "Ebook Bras",
+    description: "Pagina para venda de ebook",
+    img: "assets/projetos/ebookbras.jpeg",
+    stacks: ["React", "Bootstrapt"],
+    deploy: "https://ebookbras.vercel.app/",
   },
   {
     title: "E-Diarista",
@@ -99,6 +106,13 @@ function Portfolio() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Estado para controlar a expansão das imagens
+  const [expandedImage, setExpandedImage] = useState(null);
+
+  const toggleExpandImage = (index) => {
+    setExpandedImage(expandedImage === index ? null : index);
+  };
+
   return (
     <section id="portfolio" style={{ padding: "40px 0" }}>
       <Container>
@@ -117,9 +131,20 @@ function Portfolio() {
           {projects.slice(0, visibleProjects).map((project, index) => (
             <div key={index} className="col-12 col-md-4 d-flex mb-4">
               <div className="portfolio-card d-flex flex-column w-100">
+                {/* Contêiner da imagem que alterna entre mostrar o topo e expandir */}
                 <div
-                  className="d-flex align-items-center justify-content-center bg-light"
-                  style={{ width: "100%", minHeight: "180px" }}
+                  className="image-container"
+                  style={{
+                    width: "100%",
+                    height: expandedImage === index ? "auto" : "200px",
+                    overflow: "hidden",
+                    cursor: "pointer",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    transition: "height 0.4s ease-in-out",
+                  }}
+                  onClick={() => toggleExpandImage(index)}
                 >
                   <img
                     src={project.img}
@@ -127,15 +152,20 @@ function Portfolio() {
                     className="img-fluid"
                     style={{
                       width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                      aspectRatio: "16/9",
+                      height: expandedImage === index ? "auto" : "100%",
+                      objectFit: "cover",
+                      objectPosition:
+                        expandedImage === index ? "center" : "top",
+                      transition: "object-position 0.4s ease-in-out",
                     }}
                   />
                 </div>
                 <div className="portfolio-content flex-grow-1 d-flex flex-column p-3">
                   <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+                  {/* Descrição com cor preta */}
+                  <p className="text-dark" style={{ color: "black" }}>
+                    {project.description}
+                  </p>
                   <div className="tech-stacks mb-3">
                     {project.stacks.map((stack, i) => (
                       <span key={i} className="badge bg-secondary me-1">
@@ -186,20 +216,20 @@ function Portfolio() {
           gap: 5px;
         }
 
-          .btn-custom {
-    background-color: #d3d3d3 !important; /* Cinza claro */
-    color: #333 !important; /* Texto preto */
-    border: 1px solid #b0b0b0 !important;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-    text-decoration: none;
-    font-weight: bold;
-  }
+        .btn-custom {
+          background-color: #d3d3d3 !important; /* Cinza claro */
+          color: #333 !important; /* Texto preto */
+          border: 1px solid #b0b0b0 !important;
+          padding: 10px 20px;
+          border-radius: 5px;
+          transition: background-color 0.3s ease-in-out;
+          text-decoration: none;
+          font-weight: bold;
+        }
 
-  .btn-custom:hover {
-    background-color: #b0b0b0 !important; /* Cinza mais escuro no hover */
-  }
+        .btn-custom:hover {
+          background-color: #b0b0b0 !important; /* Cinza mais escuro no hover */
+        }
 
         @media (max-width: 768px) {
           .row {
