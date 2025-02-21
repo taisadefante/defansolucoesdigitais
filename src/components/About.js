@@ -23,7 +23,7 @@ function About() {
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
               position: "relative",
               zIndex: "2",
-              color: "#333", // Texto preto para contraste
+              color: "#000", // Preto puro
             }}
           >
             {/* Conteúdo do texto */}
@@ -71,6 +71,7 @@ function About() {
             text-align: center !important;
             padding: 0 40px;
             margin-left: 40px;
+            color: #000 !important; /* Força a cor preta */
           }
 
           /* Em telas menores, a imagem vai para cima e o texto é ajustado */
@@ -83,8 +84,8 @@ function About() {
             }
 
             .about-text {
-              padding: 0 15px !important;
-              margin: 5px;
+              padding: 0 1px !important;
+              margin: 1x;
             }
 
             .about-title {
@@ -99,6 +100,10 @@ function About() {
           }
 
           /* Ajuste do título e do texto */
+          .about-title, .about-description {
+            color: #000 !important; /* Preto puro */
+          }
+
           .about-title {
             font-size: 22px;
             font-weight: bold;

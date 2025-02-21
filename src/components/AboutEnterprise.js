@@ -44,7 +44,7 @@ function AboutEnterprise() {
                 plataforma personalizada, estamos prontos para atender às suas
                 necessidades.
               </p>
-              <p>
+              <p className="about-description">
                 estamos comprometidos em oferecer soluções que realmente atendem
                 às necessidades dos nossos clientes, resolvendo os desafios
                 digitais de forma eficiente e eficaz. Seja qual for o problema
@@ -92,8 +92,8 @@ function AboutEnterprise() {
             }
 
             .about-text {
-              padding: 0 15px !important; /* Reduz margem lateral */
-              margin: 5px;
+              padding: 0 1px !important; /* Reduz margem lateral */
+              margin: 1px;
             }
 
             .about-title {
