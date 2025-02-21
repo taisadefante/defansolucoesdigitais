@@ -110,7 +110,9 @@ function Portfolio() {
           cliente, com foco na qualidade e inovação. Sinta-se à vontade para
           explorar e conhecer melhor o meu trabalho!
         </p>
-        <p>Projetos desenvolvidos por Defan Soluções Digitais</p>
+        <p style={{ textAlign: "center", fontWeight: "bold" }}>
+          Projetos desenvolvidos por Defan Soluções Digitais
+        </p>
         <div className="row">
           {projects.slice(0, visibleProjects).map((project, index) => (
             <div key={index} className="col-12 col-md-4 d-flex mb-4">
