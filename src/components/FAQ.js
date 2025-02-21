@@ -3,7 +3,7 @@ import { Container, Accordion } from "react-bootstrap";
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-5 bg-light">
+    <section id="faq" className="py-5 ">
       <Container>
         <h2 className="text-center mb-4">Perguntas Frequentes</h2>
         <Accordion>

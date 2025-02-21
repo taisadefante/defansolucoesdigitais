@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Source Serif Pro", serif;
+  background-color: black;
 }
 
 #root {
@@ -32,13 +33,13 @@ h2,
 h3,
 h4,
 h5 {
-  color: rgb(58, 58, 61);
+  color: rgb(177, 177, 180);
   margin-top: 10px;
 }
 
 p {
   font-size: 18px;
-  color: blac;
+  color: white;
 }
 
 /* Whatsapp button*/

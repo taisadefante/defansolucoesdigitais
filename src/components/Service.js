@@ -20,7 +20,7 @@ const services = [
   {
     title: "E-commerce",
     description:
-      "Lojas virtuais com carrinho de compras, meios de pagamento e gestão de pedidos.",
+      "e o seu problema é vender online, desenvolvemos lojas virtuais funcionais e seguras, com todas as ferramentas necessárias para um bom desempenho comercial.",
   },
   {
     title: "Hospedagem",
@@ -42,6 +42,31 @@ const services = [
   {
     title: "Segurança & Proteção",
     description: "Implementamos SSL, backups e proteções contra ataques.",
+  },
+  {
+    title: "Sites Responsivos e Funcionais",
+    description:
+      "Criamos sites que funcionam perfeitamente em qualquer dispositivo, garantindo que seus clientes tenham uma experiência fluida, seja em desktops ou smartphones.",
+  },
+  {
+    title: "Melhoria de Desempenho e Velocidade",
+    description:
+      "Sites lentos frustram usuários e prejudicam sua visibilidade online. Ajudamos a otimizar o desempenho para que seu site carregue rapidamente e proporcione uma navegação sem interrupções.",
+  },
+  {
+    title: "SEO (Otimização para Motores de Busca",
+    description:
+      "Se o seu site não aparece nas pesquisas do Google, ele não está atingindo seu público-alvo. Trabalhamos com técnicas de SEO para aumentar sua visibilidade e atrair mais visitantes qualificados.",
+  },
+  {
+    title: "Design Intuitivo e Atraente",
+    description:
+      "O design do seu site pode ser a diferença entre atrair ou perder clientes. Garantimos que seu site seja não apenas bonito, mas também fácil de usar e com um layout que faça sentido para seus usuários.",
+  },
+  {
+    title: "Consultoria e Suporte Contínuo",
+    description:
+      " Não paramos após a entrega do seu site. Oferecemos suporte contínuo e consultoria para garantir que sua presença digital evolua conforme o seu negócio cresce.",
   },
 ];
 
@@ -80,7 +105,7 @@ const Services = () => {
   const nextSlide = () => {
     setIndex((prevIndex) => (prevIndex + 1) % groupedServices.length);
     setAutoScroll(false); // Pausar rolagem automática ao clicar
-    setTimeout(() => setAutoScroll(true), 10000); // Retomar após 10s
+    setTimeout(() => setAutoScroll(true), 100); // Retomar após 10s
   };
 
   // Rolagem automática a cada 5 segundos
@@ -115,11 +140,15 @@ const Services = () => {
                   <Card.Title
                     as="h4"
                     className="fw-bold"
-                    style={{ color: "#4a90e2" }}
+                    style={{ color: "#b0b0b0" }} // Cinza para o título
                   >
                     {service.title}
                   </Card.Title>
-                  <Card.Text>{service.description}</Card.Text>
+                  <Card.Text style={{ color: "#000" }}>
+                    {" "}
+                    {/* Descrição preta */}
+                    {service.description}
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </Col>
@@ -128,11 +157,28 @@ const Services = () => {
 
         {/* Botão "Próximo" centralizado abaixo dos cartões */}
         <div className="text-center mt-3">
-          <Button variant="primary" onClick={nextSlide}>
+          <Button className="btn-custom" onClick={nextSlide}>
             Próximo
           </Button>
         </div>
       </Container>
+
+      {/* Estilos CSS Inline */}
+      <style>{`
+        .btn-custom {
+          background-color: #d3d3d3 !important; /* Cinza claro */
+          color: #333 !important; /* Texto preto */
+          border: 1px solid #b0b0b0 !important;
+          padding: 10px 20px;
+          border-radius: 5px;
+          transition: background-color 0.3s ease-in-out;
+          font-weight: bold;
+        }
+
+        .btn-custom:hover {
+          background-color: #b0b0b0 !important; /* Cinza mais escuro no hover */
+        }
+      `}</style>
     </section>
   );
 };

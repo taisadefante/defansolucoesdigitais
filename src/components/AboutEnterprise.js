@@ -44,6 +44,13 @@ function AboutEnterprise() {
                 plataforma personalizada, estamos prontos para atender às suas
                 necessidades.
               </p>
+              <p>
+                estamos comprometidos em oferecer soluções que realmente atendem
+                às necessidades dos nossos clientes, resolvendo os desafios
+                digitais de forma eficiente e eficaz. Seja qual for o problema
+                que você está enfrentando no mundo online, nós temos a
+                experiência e as ferramentas para solucioná-lo.
+              </p>
             </div>
           </div>
         </div>
