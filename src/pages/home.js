@@ -9,6 +9,7 @@ import HeroSection from "../components/HeroSection";
 import About from "../components/About";
 import WhatsAppButton from "../components/WhatsAppButton";
 import AboutEnterprise from "../components/AboutEnterprise";
+import Buttonportfolio from "../components/Buttonportfolio";
 
 function Home() {
   return (
@@ -16,9 +17,11 @@ function Home() {
       <main>
         <HeroSection />
         <AboutEnterprise />
+        <Buttonportfolio />
         <Services />
         <About />
         <FAQ />
+        <Buttonportfolio />
         <WhatsAppButton />
       </main>
     </>
