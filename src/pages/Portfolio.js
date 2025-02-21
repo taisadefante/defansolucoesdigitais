@@ -75,6 +75,13 @@ const projects = [
     deploy: "https://taisadefante.github.io/pages_diaristas/",
   },
   {
+    title: "M&A Turismo",
+    description: "",
+    img: "assets/projetos/meaturismo.png",
+    stacks: ["HTML", "CSS", "JS"],
+    deploy: "https://taisadefante.github.io/web_m-a_turismo/index.html",
+  },
+  {
     title: "Cafeteria",
     description:
       "Página moderna e responsiva para destacar o ambiente, cardápio e serviços, proporcionando uma experiência intuitiva e facilitando o contato com clientes.",
@@ -197,7 +204,7 @@ function Portfolio() {
           flex-direction: column;
           background: white;
           border-radius: 8px;
-          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 5px 5px 10px 5px rgba(192, 189, 189, 0.85);
           transition: all 0.3s ease-in-out;
           overflow: hidden;
         }
