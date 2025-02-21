@@ -4,23 +4,23 @@ import { Container, Button } from "react-bootstrap";
 const HeroSection = () => {
   return (
     <section
-      className="d-flex align-items-center justify-content-center text-center text-light"
+      className="d-flex align-items-center justify-content-center text-center text-light w-100 px-3"
       style={{
-        background: `url("/assets/tecnologia.jpg") no-repeat center center/cover`,
-        minHeight: "90vh",
-        padding: "50px 15px",
-        textShadow: "2px 2px 8px rgba(0, 0, 0, 0.7)",
+        background: "black",
+        height: "auto", // Altura automática baseada no conteúdo
+        padding: "50px 0",
+        textShadow: "2px 2px 8px rgba(139, 138, 138, 0.7)",
         display: "flex",
         flexDirection: "column",
       }}
     >
-      <Container>
+      <Container fluid>
         <h2
           className="fw-bold"
           style={{
             fontSize: "3.5rem",
             lineHeight: "1.2",
-            color: "white", // Mantendo o título branco
+            color: "white",
           }}
         >
           <span>Bem-vindo a </span>
@@ -49,9 +49,8 @@ const HeroSection = () => {
             className="text-decoration-none"
           >
             <Button
-              variant="primary"
               size="lg"
-              className="d-flex align-items-center gap-2"
+              className="d-flex align-items-center gap-2 btn-custom"
             >
               <i className="bi bi-whatsapp" style={{ fontSize: "1.5rem" }}></i>
               Solicitar Orçamento
@@ -60,9 +59,26 @@ const HeroSection = () => {
         </div>
       </Container>
 
-      {/* Estilos Responsivos Inline */}
+      {/* Estilos Globais Inline para Remover Margens */}
       <style>
         {`
+          body, html {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden;
+          }
+
+          .btn-custom {
+            background-color: #d3d3d3 !important; /* Cinza claro */
+            color: #333 !important; /* Texto preto para contraste */
+            border: 1px solid #b0b0b0 !important;
+            transition: background-color 0.3s ease-in-out;
+          }
+
+          .btn-custom:hover {
+            background-color: #b0b0b0 !important; /* Cinza mais escuro no hover */
+          }
+
           @media (max-width: 992px) {
             h2 {
               font-size: 3rem !important;

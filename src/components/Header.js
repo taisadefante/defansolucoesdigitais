@@ -1,41 +1,82 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom"; // Para navegação SPA
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = () => {
+  const location = useLocation();
+
+  // Função para rolar suavemente para a seção desejada
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand as={Link} to="/">
           <img src="/assets/defan.png" width={100} height={40} alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="w-100">
           <Nav className="mx-auto">
-            <Nav.Link href="#about" className="nav-hover">
+            {/* Navegação interna: Se estiver na página principal, rola até a seção. Se não, vai para Home e rola. */}
+            <Nav.Link
+              onClick={() =>
+                location.pathname === "/"
+                  ? scrollToSection("about")
+                  : (window.location.href = "/#about")
+              }
+              className="nav-hover"
+            >
               Sobre
             </Nav.Link>
-            <Nav.Link href="#services" className="nav-hover">
+            <Nav.Link
+              onClick={() =>
+                location.pathname === "/"
+                  ? scrollToSection("services")
+                  : (window.location.href = "/#services")
+              }
+              className="nav-hover"
+            >
               Serviços
             </Nav.Link>
-            <Nav.Link href="#portfolio" className="nav-hover">
-              Projetos
+            {/* Apenas Portfólio leva para outra página */}
+            <Nav.Link as={Link} to="/portfolio" className="nav-hover">
+              Portfólio
             </Nav.Link>
-            <Nav.Link href="#faq" className="nav-hover">
+            <Nav.Link
+              onClick={() =>
+                location.pathname === "/"
+                  ? scrollToSection("faq")
+                  : (window.location.href = "/#faq")
+              }
+              className="nav-hover"
+            >
               FAQ
             </Nav.Link>
-            <Nav.Link href="#contact" className="nav-hover">
+            <Nav.Link
+              onClick={() =>
+                location.pathname === "/"
+                  ? scrollToSection("contact")
+                  : (window.location.href = "/#contact")
+              }
+              className="nav-hover"
+            >
               Contato
             </Nav.Link>
           </Nav>
-          {/* Ícones das redes sociais */}
+          {/* Ícones das redes sociais com efeito hover */}
           <div className="d-flex align-items-center">
             <a
               href="https://www.linkedin.com/in/taisadefante/"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-hover mx-2"
+              className="mx-2 social-icon"
             >
               <FaLinkedin />
             </a>
@@ -43,7 +84,7 @@ const Header = () => {
               href="https://www.instagram.com/defan_tecnologia/"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-hover mx-2"
+              className="mx-2 social-icon"
             >
               <FaInstagram />
             </a>
@@ -51,7 +92,7 @@ const Header = () => {
               href="https://www.facebook.com/profile.php?id=61572546557616"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-hover mx-2"
+              className="mx-2 social-icon"
             >
               <FaFacebook />
             </a>
@@ -59,29 +100,25 @@ const Header = () => {
         </Navbar.Collapse>
       </Container>
 
-      {/* Estilos de Hover */}
+      {/* Estilos Inline para Hover nos Ícones */}
       <style>
         {`
+          .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease-in-out;
+          }
+
+          .social-icon:hover {
+            color: rgb(99, 98, 97) !important;
+          }
+
           .nav-hover {
-            color: #d3d3d3 !important; /* Branco claro */
-            font-size: 18px;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease-in-out;
           }
-          
+
           .nav-hover:hover {
-            color: #ffffff !important; /* Branco forte no hover */
-            font-weight: bold;
-          }
-
-          .social-hover {
-            color: #d3d3d3 !important; /* Branco claro */
-            font-size: 20px;
-            transition: color 0.3s ease, font-size 0.3s ease;
-          }
-
-          .social-hover:hover {
-            color: #ffffff !important; /* Branco forte no hover */
-            font-size: 24px; /* Aumenta um pouco no hover */
+            color:rgb(209, 207, 207) !important; /* Cor de destaque no hover */
           }
         `}
       </style>

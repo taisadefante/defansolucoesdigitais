@@ -1,20 +1,42 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min"; // Importando o JS do Bootstrap
-import "bootstrap-icons/font/bootstrap-icons.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer"; // Importando o Footer
+import Portfolio from "./pages/Portfolio";
+import Home from "./pages/home"; // Certifique-se de importar a Home
+import Contact from "./components/Contact";
 
-import Home from "./pages/home";
-import "./styles/styles.css";
-
-function App() {
+const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <Header />
+      <main className="container mt-4 main-content">
+        {" "}
+        {/* Mantém um espaçamento entre Header e conteúdo */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+        <Contact />
+      </main>
+      <Footer />
+
+      {/* Estilos para corrigir a sobreposição do Header */}
+      <style>
+        {`
+          .main-content {
+            padding-top: 80px; /* Espaço suficiente para compensar o Header fixo */
+          }
+
+          @media (max-width: 768px) {
+            .main-content {
+              padding-top: 90px; /* Ajuste maior para telas menores */
+            }
+          }
+        `}
+      </style>
     </Router>
   );
-}
+};
 
 export default App;
