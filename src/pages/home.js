@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 import Services from "../components/Service";
 import FAQ from "../components/FAQ";
 import HeroSection from "../components/HeroSection";
-import About from "../components/About";
 import AboutEnterprise from "../components/AboutEnterprise";
 import Buttonportfolio from "../components/Buttonportfolio";
 
@@ -18,7 +17,6 @@ function Home() {
         <AboutEnterprise />
         <Buttonportfolio />
         <Services />
-        <About />
         <FAQ />
         <Buttonportfolio />
       </main>
