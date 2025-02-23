@@ -1,10 +1,22 @@
 import React from "react";
 
 function AboutEnterprise() {
+  // Dados sobre a empresa
+  const aboutText = [
+    {
+      text: "Somos apaixonados por transformar ideias em experiências digitais únicas. Especializados na criação de sites e no desenvolvimento web, nosso objetivo é entregar soluções inovadoras, personalizadas e altamente funcionais para empresas e indivíduos que buscam se destacar no mundo online.",
+    },
+    {
+      text: "Trabalhamos em cada projeto com atenção aos detalhes, garantindo que cada site seja não apenas visualmente atraente, mas também intuitivo, responsivo e otimizado para o melhor desempenho possível. Seja para um site institucional, um e-commerce ou uma plataforma personalizada, estamos prontos para atender às suas necessidades.",
+    },
+    {
+      text: "Estamos comprometidos em oferecer soluções que realmente atendem às necessidades dos nossos clientes, resolvendo os desafios digitais de forma eficiente e eficaz. Seja qual for o problema que você está enfrentando no mundo online, nós temos a experiência e as ferramentas para solucioná-lo.",
+    },
+  ];
+
   return (
     <section id="about" className="about py-5 text-dark position-relative">
       <div className="container-fluid mt-5">
-        {" "}
         {/* Alterado para container-fluid */}
         <div className="row justify-content-center position-relative">
           {/* Imagem - Ajusta conforme a tela */}
@@ -30,29 +42,11 @@ function AboutEnterprise() {
           >
             {/* Conteúdo do texto */}
             <div className="about-text">
-              <p className="text-custom mb-3">
-                Somos apaixonados por transformar ideias em experiências
-                digitais únicas. Especializados na criação de sites e no
-                desenvolvimento web, nosso objetivo é entregar soluções
-                inovadoras, personalizadas e altamente funcionais para empresas
-                e indivíduos que buscam se destacar no mundo online.
-              </p>
-
-              <p className="text-custom mb-3">
-                Trabalhamos em cada projeto com atenção aos detalhes, garantindo
-                que cada site seja não apenas visualmente atraente, mas também
-                intuitivo, responsivo e otimizado para o melhor desempenho
-                possível. Seja para um site institucional, um e-commerce ou uma
-                plataforma personalizada, estamos prontos para atender às suas
-                necessidades.
-              </p>
-              <p className="text-custom mb-3">
-                Estamos comprometidos em oferecer soluções que realmente atendem
-                às necessidades dos nossos clientes, resolvendo os desafios
-                digitais de forma eficiente e eficaz. Seja qual for o problema
-                que você está enfrentando no mundo online, nós temos a
-                experiência e as ferramentas para solucioná-lo.
-              </p>
+              {aboutText.map((item, index) => (
+                <p key={index} className="text-custom mb-3">
+                  {item.text}
+                </p>
+              ))}
             </div>
           </div>
         </div>

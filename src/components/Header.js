@@ -7,6 +7,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Header = () => {
   const location = useLocation();
 
+  // Dados da navegação
+  const navItems = [
+    { label: "Sobre", id: "about" },
+    { label: "Serviços", id: "services" },
+    { label: "FAQ", id: "faq" },
+    { label: "Contato", id: "contact" },
+  ];
+
   // Função para rolar suavemente para a seção desejada
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -24,50 +32,22 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="w-100">
           <Nav className="mx-auto">
-            {/* Navegação interna: Se estiver na página principal, rola até a seção. Se não, vai para Home e rola. */}
-            <Nav.Link
-              onClick={() =>
-                location.pathname === "/"
-                  ? scrollToSection("about")
-                  : (window.location.href = "/#about")
-              }
-              className="nav-hover"
-            >
-              Sobre
-            </Nav.Link>
-            <Nav.Link
-              onClick={() =>
-                location.pathname === "/"
-                  ? scrollToSection("services")
-                  : (window.location.href = "/#services")
-              }
-              className="nav-hover"
-            >
-              Serviços
-            </Nav.Link>
+            {navItems.map((item) => (
+              <Nav.Link
+                key={item.id}
+                onClick={() =>
+                  location.pathname === "/"
+                    ? scrollToSection(item.id)
+                    : (window.location.href = `/#${item.id}`)
+                }
+                className="nav-hover"
+              >
+                {item.label}
+              </Nav.Link>
+            ))}
             {/* Apenas Portfólio leva para outra página */}
             <Nav.Link as={Link} to="/portfolio" className="nav-hover">
               Portfólio
-            </Nav.Link>
-            <Nav.Link
-              onClick={() =>
-                location.pathname === "/"
-                  ? scrollToSection("faq")
-                  : (window.location.href = "/#faq")
-              }
-              className="nav-hover"
-            >
-              FAQ
-            </Nav.Link>
-            <Nav.Link
-              onClick={() =>
-                location.pathname === "/"
-                  ? scrollToSection("contact")
-                  : (window.location.href = "/#contact")
-              }
-              className="nav-hover"
-            >
-              Contato
             </Nav.Link>
           </Nav>
           {/* Ícones das redes sociais com efeito hover */}

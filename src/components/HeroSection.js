@@ -68,6 +68,7 @@ const HeroSection = () => {
             overflow-x: hidden;
           }
 
+     
           .btn-custom {
             background-color: #d3d3d3 !important; /* Cinza claro */
             color: #333 !important; /* Texto preto para contraste */
@@ -78,6 +79,8 @@ const HeroSection = () => {
           .btn-custom:hover {
             background-color: #b0b0b0 !important; /* Cinza mais escuro no hover */
           }
+
+
 
           @media (max-width: 992px) {
             h2 {
