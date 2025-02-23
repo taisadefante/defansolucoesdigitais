@@ -16,6 +16,20 @@ function AboutEnterprise() {
 
   return (
     <section id="about" className="about py-5 text-dark position-relative">
+      <div
+        style={{
+          padding: "50px",
+          textAlign: "center",
+          background: "#000",
+          color: "white",
+        }}
+      >
+        <h2>Quem somos?</h2>
+        <p>
+          Somos especialistas em criação de sites estratégicos para impulsionar
+          sua marca e aumentar conversões.
+        </p>
+      </div>
       <div className="container-fluid mt-5">
         {/* Alterado para container-fluid */}
         <div className="row justify-content-center position-relative">

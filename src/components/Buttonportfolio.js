@@ -6,14 +6,38 @@ function Buttonportfolio() {
   const navigate = useNavigate(); // Hook para navegar entre páginas
 
   return (
-    <Container className="d-flex justify-content-center align-items-center">
-      <Button
-        size="lg"
-        className="d-flex align-items-center gap-2 btn-custom"
-        onClick={() => navigate("/portfolio")} // Redireciona para a página do portfólio
+    <Container className="d-flex flex-column justify-content-center align-items-center text-center">
+      <div
+        style={{
+          backgroundImage:
+            "url('https://source.unsplash.com/1600x900/?business,marketing')",
+          height: "300px",
+          width: "100%",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: "white",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          fontSize: "35px",
+          fontWeight: "bold",
+          padding: "1px",
+        }}
       >
-        Nosso Portfólio
-      </Button>
+        <div style={{ marginBottom: "10px" }}>
+          Impulsione suas vendas com um site profissional!
+        </div>
+        <Button
+          size="lg"
+          className="btn-custom"
+          onClick={() => navigate("/portfolio")}
+          style={{ marginTop: "5px" }} // Reduzindo margem superior do botão
+        >
+          Nosso Portfólio
+        </Button>
+      </div>
     </Container>
   );
 }
