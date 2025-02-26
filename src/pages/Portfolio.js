@@ -13,6 +13,14 @@ const projects = [
     deploy: "https://jumartins-terapeuta.vercel.app/",
   },
   {
+    title: "Conceissionaria",
+    description:
+      "Plataforma de e-commerce especializada, focada na exibição, gestão e negociação de veículos. com login do administrador para adicionar, excluir e editar o estoque de veiculos",
+    img: "assets/projetos/concessionaria.jpeg",
+    stacks: ["React.js", "Bootstrap, node"],
+    deploy: "https://concessionariadefan.vercel.app/",
+  },
+  {
     title: "Inter Film",
     description:
       "Empresa especializada em películas de controle solar (insulfilm) para automóveis e residências.",
