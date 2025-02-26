@@ -15,10 +15,18 @@ const projects = [
   {
     title: "Conceissionaria",
     description:
-      "Plataforma de e-commerce especializada, focada na exibição, gestão e negociação de veículos. com login do administrador para adicionar, excluir e editar o estoque de veiculos",
+      "Plataforma de e-commerce especializada, focada na exibição, gestão e negociação de veículos. com login do administrador para adicionar, excluir e editar o estoque de veiculos.",
     img: "assets/projetos/concessionaria.jpeg",
     stacks: ["React.js", "Bootstrap, node"],
     deploy: "https://concessionariadefan.vercel.app/",
+  },
+  {
+    title: "Emprestimos",
+    description:
+      "Projeto foi desenvolvido como modelo para uma empresa de empréstimos pessoais com o objetivo de criar uma plataforma intuitiva, moderna e responsiva, garantindo uma experiência fluida para os usuários que desejam solicitar crédito de forma simples e segura.",
+    img: "assets/projetos/emprestimo.jpeg",
+    stacks: ["React.js", "Bootstrap"],
+    deploy: "https://emprestimos-chi.vercel.app/",
   },
   {
     title: "Inter Film",
