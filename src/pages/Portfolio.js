@@ -182,6 +182,18 @@ function Portfolio() {
   return (
     <section id="portfolio" style={{ padding: "40px 0" }}>
       <Container>
+        <h2 className="text-center mb-4">Portfólios</h2>
+        <p style={{ textAlign: "justify", textIndent: "25px" }}>
+          Bem-vindo ao meu portfólio! Aqui você encontrará uma seleção dos meus
+          projetos e trabalhos, refletindo minha paixão e dedicação em cada
+          detalhe. Cada peça foi pensada para atender às necessidades do
+          cliente, com foco na qualidade e inovação. Sinta-se à vontade para
+          explorar e conhecer melhor o meu trabalho!
+        </p>
+
+        <p style={{ textAlign: "center", fontWeight: "bold" }}>
+          Projetos desenvolvidos por Defan Soluções Digitais
+        </p>
         {/* Botão de Filtro na Esquerda */}
         <div className="mb-4 d-flex">
           <Dropdown>
