@@ -25,6 +25,7 @@ const projects = [
     deploy: "https://concessionariadefan.vercel.app/",
   },
   {
+    id: "Arquiteto",
     title: "Arquiteto",
     description:
       " Criamos um site moderno e responsivo para destacar projetos arquitetônicos com um design sofisticado e intuitivo.",
