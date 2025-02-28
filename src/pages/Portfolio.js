@@ -19,10 +19,19 @@ const projects = [
     title: "Concessionaria",
     description:
       " Plataforma de e-commerce especializada, focada na exibição, gestão e negociação de veículos. com login do administrador para adicionar, excluir e editar o estoque de veiculos.",
-    img: "assets//projetos/concessionaria.jpeg",
+    img: "assets/projetos/concessionaria.jpeg",
     stacks: ["React.js", "Bootstrap", "Node"],
     repo: "",
     deploy: "https://concessionariadefan.vercel.app/",
+  },
+  {
+    title: "Arquiteto",
+    description:
+      " Criamos um site moderno e responsivo para destacar projetos arquitetônicos com um design sofisticado e intuitivo.",
+    img: "assets/projetos/arquiteto.jpeg",
+    stacks: ["React.js", "Bootstrap"],
+    repo: "",
+    deploy: "https://arquiteto-beta.vercel.app/",
   },
   {
     id: "Institucional",
