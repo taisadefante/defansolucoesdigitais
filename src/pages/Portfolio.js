@@ -32,7 +32,7 @@ const projects = [
     img: "assets/projetos/arquiteto.jpeg",
     stacks: ["React.js", "Bootstrap"],
     repo: "",
-    deploy: "https://arquiteto-beta.vercel.app/",
+    deploy: "https://arquiteto-defan-gilt.vercel.app/",
   },
   {
     id: "Institucional",
