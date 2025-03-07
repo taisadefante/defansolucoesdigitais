@@ -35,6 +35,26 @@ const projects = [
     deploy: "https://arquiteto-defan-gilt.vercel.app/",
   },
   {
+    id: "Auto",
+    title: "Concessionaria",
+    description:
+      " Plataforma de e-commerce especializada, focada na exibição, gestão e negociação de veículos. com login do administrador para adicionar, excluir e editar o estoque de veiculos.",
+    img: "assets/projetos/concessionaria.jpeg",
+    stacks: ["React.js", "Bootstrap", "Node"],
+    repo: "",
+    deploy: "https://concessionariadefan.vercel.app/",
+  },
+  {
+    id: "Academia",
+    title: "Academia",
+    description:
+      " Modelo site moderno e responsivo para academia, apresenta informações essenciais sobre os serviços da academia.",
+    img: "assets/projetos/academia.jpeg",
+    stacks: ["HTML", "Bootstrap", "JavaScript"],
+    repo: "",
+    deploy: "https://academia-swart.vercel.app/",
+  },
+  {
     id: "Institucional",
     title: "Emprestimos",
     description:
