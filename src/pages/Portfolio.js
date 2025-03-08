@@ -45,6 +45,17 @@ const projects = [
     deploy: "https://concessionariadefan.vercel.app/",
   },
   {
+    id: "Clinica",
+    title: "Clinica",
+    description:
+      "site institucional para uma clínica médica, oferecendo uma plataforma moderna, responsiva e intuitiva para facilitar o acesso às informações sobre serviços, equipe médica e contato com os pacientes.",
+    img: "assets/projetos/clinica.jpeg",
+    stacks: ["HTML", "CSS", "JS"],
+    repo: "",
+    deploy: "https://taisadefante.github.io/Clinica/",
+  },
+
+  {
     id: "Academia",
     title: "Academia",
     description:
