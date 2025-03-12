@@ -1,21 +1,12 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom"; // Para navegação SPA
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = () => {
   const location = useLocation();
 
-  // Dados da navegação
-  const navItems = [
-    { label: "Sobre", id: "about" },
-    { label: "Serviços", id: "services" },
-    { label: "FAQ", id: "faq" },
-    { label: "Contato", id: "contact" },
-  ];
-
-  // Função para rolar suavemente para a seção desejada
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -32,36 +23,69 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="w-100">
           <Nav className="mx-auto">
-            {navItems.map((item) => (
-              <Nav.Link
-                key={item.id}
-                onClick={() =>
-                  location.pathname === "/"
-                    ? scrollToSection(item.id)
-                    : (window.location.href = `/#${item.id}`)
-                }
-                className="nav-hover"
-              >
-                {item.label}
-              </Nav.Link>
-            ))}
-            {/* Apenas Portfólio leva para outra página */}
+            {/* SOBRE */}
+            <Nav.Link
+              onClick={() =>
+                location.pathname === "/"
+                  ? scrollToSection("about")
+                  : (window.location.href = `/#about`)
+              }
+              className="nav-hover"
+            >
+              Sobre
+            </Nav.Link>
+
+            {/* SERVIÇOS */}
+            <Nav.Link
+              onClick={() =>
+                location.pathname === "/"
+                  ? scrollToSection("services")
+                  : (window.location.href = `/#services`)
+              }
+              className="nav-hover"
+            >
+              Serviços
+            </Nav.Link>
+
+            {/* PLANOS (entre Serviços e FAQ) */}
+            <Nav.Link as={Link} to="/planos" className="nav-hover">
+              Planos
+            </Nav.Link>
+
+            {/* FAQ */}
+            <Nav.Link
+              onClick={() =>
+                location.pathname === "/"
+                  ? scrollToSection("faq")
+                  : (window.location.href = `/#faq`)
+              }
+              className="nav-hover"
+            >
+              FAQ
+            </Nav.Link>
+
+            {/* CONTATO */}
+            <Nav.Link
+              onClick={() =>
+                location.pathname === "/"
+                  ? scrollToSection("contact")
+                  : (window.location.href = `/#contact`)
+              }
+              className="nav-hover"
+            >
+              Contato
+            </Nav.Link>
+
+            {/* PORTFÓLIO */}
             <Nav.Link as={Link} to="/portfolio" className="nav-hover">
               Portfólio
             </Nav.Link>
           </Nav>
-          {/* Ícones das redes sociais com efeito hover */}
+
+          {/* REDES SOCIAIS */}
           <div className="d-flex align-items-center">
             <a
-              href="https://www.linkedin.com/in/taisadefante/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mx-2 social-icon"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="https://www.instagram.com/defan_tecnologia/"
+              href="https://www.instagram.com/defan_solucoes_digitais"
               target="_blank"
               rel="noopener noreferrer"
               className="mx-2 social-icon"
@@ -80,7 +104,6 @@ const Header = () => {
         </Navbar.Collapse>
       </Container>
 
-      {/* Estilos Inline para Hover nos Ícones */}
       <style>
         {`
           .social-icon {
@@ -98,7 +121,7 @@ const Header = () => {
           }
 
           .nav-hover:hover {
-            color:rgb(209, 207, 207) !important; /* Cor de destaque no hover */
+            color: rgb(209, 207, 207) !important;
           }
         `}
       </style>

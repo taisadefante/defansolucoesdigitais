@@ -9,7 +9,14 @@ import AboutEnterprise from "../components/AboutEnterprise";
 import DestaqueSection from "../components/DestaqueSection";
 import Buttonportfolio from "../components/Buttonportfolio";
 
+import DiferenciaisSection from "../components/DiferenciaisSection";
+
+import Depoimento from "../components/Depoimento";
+
 import TecnologiasSection from "../components/TecnologiasSection";
+import EstatisticasSection from "../components/EstatisticasSection";
+import GarantiaSection from "../components/GarantiaSection";
+import CTASection from "../components/CTASection";
 
 function Home() {
   return (
@@ -20,7 +27,12 @@ function Home() {
         <DestaqueSection />
         <Buttonportfolio />
         <Services />
+        <DiferenciaisSection />
+        <Depoimento />
         <TecnologiasSection />
+        <EstatisticasSection />
+        <GarantiaSection />
+        <CTASection />
 
         <FAQ />
       </main>

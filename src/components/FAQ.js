@@ -31,6 +31,10 @@ const FAQ = () => {
         "O tempo de desenvolvimento varia conforme a complexidade do projeto, podendo levar de algumas semanas a meses.",
     },
     {
+      question: "Posso sugerir alterações?",
+      answer: "Sim! Nosso objetivo é entregar o que você realmente precisa.",
+    },
+    {
       question: "Vocês fazem integração com APIs de terceiros?",
       answer:
         "Sim, realizamos integrações com APIs de pagamento, redes sociais, mensageria e outros serviços conforme a necessidade do cliente.",
