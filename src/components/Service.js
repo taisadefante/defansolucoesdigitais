@@ -150,9 +150,7 @@ const Services = () => {
       style={{ backgroundColor: "#000", padding: "60px 0" }}
     >
       <Container>
-        <h2 className="text-center mb-4 text-white fw-bold">
-          Soluções que Entregam Resultados
-        </h2>
+        <h2 className="text-center mb-4">Soluções que Entregam Resultados</h2>
         <p
           className="text-center text-secondary mb-5"
           style={{ fontSize: "15px" }}
