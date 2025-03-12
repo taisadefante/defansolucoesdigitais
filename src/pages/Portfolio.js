@@ -3,7 +3,7 @@ import { Container, Dropdown } from "react-bootstrap";
 import { FaLink, FaFilter } from "react-icons/fa";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-const projects = [
+export const projects = [
   {
     id: "Psicologa/Terapeuta",
     title: "Juliana Martins - Terapeuta",
