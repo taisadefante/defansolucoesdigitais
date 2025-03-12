@@ -21,7 +21,7 @@ const Contact = () => {
           juntos.
         </p>
 
-        {/* Centraliza o botão */}
+        {/* Botão centralizado */}
         <div className="d-flex justify-content-center">
           <a
             href="https://api.whatsapp.com/send?phone=+5521988359825&text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento."
@@ -30,10 +30,8 @@ const Contact = () => {
             style={{ textDecoration: "none" }}
           >
             <Button
-              variant="light"
               size="lg"
-              className="d-flex align-items-center gap-2 px-4 py-2"
-              style={{ borderRadius: "40px", fontWeight: "bold" }}
+              className="btn-custom d-flex align-items-center gap-2 px-4 py-2"
             >
               <i className="bi bi-whatsapp" style={{ fontSize: "1.5rem" }}></i>
               Falar pelo WhatsApp
@@ -41,6 +39,25 @@ const Contact = () => {
           </a>
         </div>
       </Container>
+
+      {/* Estilo para o botão cinza claro */}
+      <style>
+        {`
+          .btn-custom {
+            background-color: #d3d3d3 !important;
+            color: #333 !important;
+            border: 1px solid #b0b0b0 !important;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+          }
+
+          .btn-custom:hover {
+            background-color: #bcbcbc !important;
+            color: #111 !important;
+          }
+        `}
+      </style>
     </section>
   );
 };
