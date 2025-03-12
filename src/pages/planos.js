@@ -12,6 +12,7 @@ const planosCompletos = [
       "Design moderno",
       "Integração com WhatsApp ou formulário",
       "SEO básico",
+      "Garantia de 90 dias",
       "Entrega em até 5 dias",
     ],
   },
@@ -25,6 +26,8 @@ const planosCompletos = [
       "Formulário integrado com e-mail marketing",
       "Botão CTA com redirecionamento",
       "Link para grupo no WhatsApp",
+      "Garantia de 90 dias",
+      "Entrega em até 5 dias",
     ],
   },
   {
@@ -37,6 +40,8 @@ const planosCompletos = [
       "Design Responsivo",
       "Integração com WhatsApp",
       "Suporte 7 dias",
+      "Garantia de 90 dias",
+      "Entrega em até 5 dias",
     ],
   },
   {
@@ -44,7 +49,13 @@ const planosCompletos = [
     preco: "A partir de R$ 1097",
     mensal: "R$ 79,90/mês",
     publico: "Pequenas empresas e negócios locais",
-    recursos: ["Até 4 páginas", "Integração com WhatsApp", "Suporte 30 dias"],
+    recursos: [
+      "Até 4 páginas",
+      "Integração com WhatsApp",
+      "Suporte 30 dias",
+      "Garantia de 90 dias",
+      "Entrega em até 15 dias",
+    ],
   },
   {
     nome: "Avançado",
@@ -55,6 +66,8 @@ const planosCompletos = [
       "Site completo",
       "Dashboard e painel administrativo",
       "Suporte 90 dias",
+      "Garantia de 90 dias",
+      "Entrega em até 30 dias",
     ],
   },
   {
@@ -65,6 +78,8 @@ const planosCompletos = [
     recursos: [
       "Catálogo com até 20 produtos",
       "Carrinho básico com envio via WhatsApp",
+      "Garantia de 90 dias",
+      "Entrega em até 15 dias",
     ],
   },
   {
@@ -77,6 +92,8 @@ const planosCompletos = [
       "Painel administrativo",
       "Carrinho, checkout",
       "Relatórios e dashboards",
+      "Garantia de 90 dias",
+      "Entrega em até 30 dias",
     ],
   },
   {
@@ -89,6 +106,8 @@ const planosCompletos = [
       "Carrinho com envio por WhatsApp",
       "Controle de pedidos e taxa de entrega",
       "Integração com pagamentos (Pix, cartão) e status do pedido",
+      "Garantia de 90 dias",
+      "Entrega em até 10 dias",
     ],
   },
   {
@@ -101,6 +120,8 @@ const planosCompletos = [
       "Carrinho com envio por WhatsApp",
       "Controle de pedidos e taxa de entrega",
       "Integração com pagamentos (Pix, cartão) e status do pedido",
+      "Garantia de 90 dias",
+      "Entrega em até 15 dias",
     ],
   },
   {
@@ -113,6 +134,8 @@ const planosCompletos = [
       "Prontuário eletrônico",
       "Envio de lembretes por WhatsApp",
       "Controle de pagamentos",
+      "Garantia de 90 dias",
+      "Entrega em até 15 dias",
     ],
   },
   {
@@ -121,10 +144,12 @@ const planosCompletos = [
     mensal: "R$ 189,90/mês",
     publico: "Clínicas com múltiplos profissionais",
     recursos: [
-      "Múltiplos usuários com acesso individual",
+      "Múltiplos usuários com acesso individual ( até 10 usuarios).",
       "Gestão de agenda e prontuário",
       "Painel de administração geral",
       "Financeiro completo com relatórios",
+      "Garantia de 90 dias",
+      "Entrega em até 15 dias",
     ],
   },
 ];
@@ -140,6 +165,11 @@ const TodosPlanosPage = () => {
     <section className="py-5 bg-dark text-white">
       <Container>
         <h2 className="text-center mb-4">Todos os Planos Disponíveis</h2>
+        <p className="text-center">
+          Conheça nossos modelos prontos em nosso portfólio com entrega em até{" "}
+          <strong>3 dias úteis</strong> e valor promocional especial.
+        </p>
+
         <Row>
           {planosCompletos.map((p, i) => (
             <Col md={6} lg={4} className="mb-4 px-1" key={i}>
