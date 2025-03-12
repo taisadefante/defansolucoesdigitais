@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { FaLink } from "react-icons/fa";
-import { projects } from "../pages/Portfolio"; // Certifique-se de exportar o array lá
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { FaArrowRight } from "react-icons/fa";
+import { projects } from "../pages/Portfolio"; // Certifique-se que está exportando corretamente
 
 const DestaqueSection = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setStartIndex((prev) => (prev + 3) % projects.length);
     }, 300000); // 5 minutos
-
     return () => clearInterval(interval);
   }, []);
 
@@ -40,7 +40,7 @@ const DestaqueSection = () => {
                     overflow: "hidden",
                     display: "flex",
                     justifyContent: "center",
-                    alignItems: "center",
+                    alignItems: "flex-start",
                     cursor: "pointer",
                   }}
                 >
@@ -57,24 +57,16 @@ const DestaqueSection = () => {
                   />
                 </div>
                 <div className="portfolio-content flex-grow-1 d-flex flex-column p-3">
-                  <h3>{project.title}</h3>
-                  <p className="text-dark">{project.description}</p>
-                  <div className="tech-stacks mb-3">
-                    {project.stacks.map((stack, i) => (
-                      <span key={i} className="badge bg-secondary me-1">
-                        {stack}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="portfolio-btn mt-auto">
-                    <a
-                      href={project.deploy}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-custom d-flex align-items-center justify-content-center"
+                  <h5 className="mb-1">{project.title}</h5>
+                  <small className="text-muted mb-2">{project.id}</small>
+                  <div className="text-end mt-auto">
+                    <Button
+                      variant="light"
+                      className="btn-detail"
+                      onClick={() => setSelectedProject(project)}
                     >
-                      <FaLink className="me-2" /> Ver Projeto
-                    </a>
+                      Detalhes <FaArrowRight className="ms-2" />
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -87,11 +79,15 @@ const DestaqueSection = () => {
         .portfolio-card {
           display: flex;
           flex-direction: column;
-          background: white;
-          border-radius: 8px;
-          box-shadow: 5px 5px 10px 5px rgba(192, 189, 189, 0.85);
-          transition: all 0.3s ease-in-out;
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
           overflow: hidden;
+          transition: transform 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+          transform: translateY(-5px);
         }
 
         .portfolio-content {
@@ -100,27 +96,17 @@ const DestaqueSection = () => {
           flex-direction: column;
         }
 
-        .portfolio-btn a {
-          text-decoration: none;
+        .btn-detail {
           font-weight: bold;
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-        }
-
-        .btn-custom {
-          background-color: #d3d3d3 !important;
-          color: #333 !important;
-          border: 1px solid #b0b0b0 !important;
-          padding: 10px 20px;
           border-radius: 5px;
-          transition: background-color 0.3s ease-in-out;
-          text-decoration: none;
-          font-weight: bold;
+          background-color: #d3d3d3;
+          border: 1px solid #aaa;
+          color: #000;
+          transition: 0.3s ease-in-out;
         }
 
-        .btn-custom:hover {
-          background-color: #b0b0b0 !important;
+        .btn-detail:hover {
+          background-color: #b0b0b0;
         }
 
         @media (max-width: 768px) {
