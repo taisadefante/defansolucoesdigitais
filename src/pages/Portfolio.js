@@ -385,14 +385,14 @@ function Portfolio() {
                     <strong>Tecnologias:</strong>{" "}
                     {selectedProject.stacks?.join(", ")}
                   </p>
-                  <p>
+                  {/*<p>
                     <strong>Valor do Projeto:</strong>{" "}
                     {selectedProject.price || "R$ 1.500,00"}
                   </p>
                   <p>
                     <strong>Plano Mensal:</strong>{" "}
                     {selectedProject.monthly || "R$ 89,90/mês"}
-                  </p>
+                  </p>*/}
                   <p>
                     <strong>Prazo de Entrega:</strong>{" "}
                     {selectedProject.deadline || "10 dias úteis"}

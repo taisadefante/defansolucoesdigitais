@@ -6,7 +6,6 @@ import Portfolio from "./pages/Portfolio";
 import Home from "./pages/home"; // Certifique-se de importar a Home
 import Contact from "./components/Contact";
 import WhatsAppButton from "./components/WhatsAppButton";
-import Planos from "./pages/planos";
 
 const App = () => {
   return (
@@ -18,7 +17,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/planos" element={<Planos />} />
         </Routes>
         <Contact />
       </main>

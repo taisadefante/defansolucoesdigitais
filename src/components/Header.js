@@ -48,9 +48,9 @@ const Header = () => {
             </Nav.Link>
 
             {/* PLANOS (entre Serviços e FAQ) */}
-            <Nav.Link as={Link} to="/planos" className="nav-hover">
+            {/*  <Nav.Link as={Link} to="/planos" className="nav-hover">
               Planos
-            </Nav.Link>
+            </Nav.Link>*/}
 
             {/* FAQ */}
             <Nav.Link
